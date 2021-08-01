@@ -54,14 +54,15 @@ class CallbackTest {
         $("[data-test-id=name].input_invalid .input__sub").shouldHave(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
     }
 
-    //    @Test
-//    void shouldRequestIncorrectName2(){
-//        $("[data-test-id=name] input").setValue("Александра");
-//        $("[data-test-id=phone] input").setValue("+79689111111");
-//        $("[data-test-id=agreement]").click();
-//        $("button").click();
-//        $("[data-test-id=name].input_invalid .input__sub").shouldHave(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
-//    }
+    @Test
+    void shouldRequestIncorrectName2() {
+        $("[data-test-id=name] input").setValue("Александра");
+        $("[data-test-id=phone] input").setValue("+79689111111");
+        $("[data-test-id=agreement]").click();
+        $("button").click();
+        $("[data-test-id=name].input_invalid .input__sub").shouldHave(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
+    }
+
     @Test
     void shouldRequestIncorrectPhone() {
         $("[data-test-id=name] input").setValue("Матюхина Александра");
